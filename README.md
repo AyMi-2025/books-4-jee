@@ -7,6 +7,7 @@ A beautiful, responsive website to showcase and sell your used JEE preparation b
 ✅ **Search Functionality** - Search books by title or author  
 ✅ **Subject Filters** - Filter by Physics, Chemistry, Mathematics, or view All  
 ✅ **WhatsApp Integration** - Direct messaging with pre-filled text  
+✅ **Full Image View** - Click any book image to see it in full screen  
 ✅ **Responsive Design** - Works perfectly on mobile, tablet, and desktop  
 ✅ **Modern UI** - Clean and professional design  
 ✅ **Easy to Update** - Simple configuration in `script.js`

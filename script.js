@@ -97,6 +97,66 @@ const BOOKS_DATA = [
         originalPrice: 990,
         sellingPrice: 500,
         image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
+    },
+    {
+        id: 10,
+        title: "PW Class 11th JEE Physics Modules",
+        author: "Physics Wallah",
+        subject: "Physics",
+        condition: "Good",
+        originalPrice: 990,
+        sellingPrice: 500,
+        image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
+    },
+    {
+        id: 11,
+        title: "PW Class 11th JEE Chemistry Modules",
+        author: "Physics Wallah",
+        subject: "Chemistry",
+        condition: "Good",
+        originalPrice: 990,
+        sellingPrice: 500,
+        image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
+    },
+    {
+        id: 12,
+        title: "PW Class 11th JEE Mathematics Modules",
+        author: "Physics Wallah",
+        subject: "Mathematics",
+        condition: "Good",
+        originalPrice: 990,
+        sellingPrice: 500,
+        image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
+    },
+    {
+        id: 13,
+        title: "PW Class 12th JEE Physics Modules",
+        author: "Physics Wallah",
+        subject: "Physics",
+        condition: "Good",
+        originalPrice: 990,
+        sellingPrice: 500,
+        image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
+    },
+    {
+        id: 14,
+        title: "PW Class 12th JEE Chemistry Modules",
+        author: "Physics Wallah",
+        subject: "Chemsitry",
+        condition: "Good",
+        originalPrice: 990,
+        sellingPrice: 500,
+        image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
+    },
+    {
+        id: 15,
+        title: "PW Class 12th JEE Mathematics Modules",
+        author: "Physics Wallah",
+        subject: "Mathematics",
+        condition: "Good",
+        originalPrice: 990,
+        sellingPrice: 500,
+        image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
     }
 ];
 

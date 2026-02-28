@@ -188,18 +188,35 @@ const BOOKS_DATA = [
         sellingPrice: 500,
         image: "IMG_20260206_112729_589.jpg"
     },
-
-
-
-    
     {
-        id: 001,
-        title: "Aldehydes , Ketones and Ether - Notes",
-        author: "Ayan Bhaiya",
+        id: 19,
+        title: "CBSE PHYSICS Chapterwise Question Bank (2011 - 2024)",
+        author: "Arihant",
+        subject: "Physics",
+        condition: "New",
+        originalPrice: 430,
+        sellingPrice: 200,
+        image: "IMG_20260206_112729_589.jpg"
+    },
+    {
+        id: 20,
+        title: "CBSE CHEMISTRY Chapterwise Question Bank (2011 - 2024)",
+        author: "Arihant",
         subject: "Chemistry",
-        originalPrice: 199,
-        sellingPrice: 0,
-        image: ""
+        condition: "New",
+        originalPrice: 430,
+        sellingPrice: 200,
+        image: "IMG_20260206_112729_589.jpg"
+    },
+    {
+        id: 21,
+        title: "CBSE MATHEMATICS Chapterwise Question Bank (2011 - 2024)",
+        author: "Arihant",
+        subject: "Mathematics",
+        condition: "New",
+        originalPrice: 430,
+        sellingPrice: 200,
+        image: "IMG_20260206_112729_589.jpg"
     }
 ];
 

@@ -187,6 +187,19 @@ const BOOKS_DATA = [
         originalPrice: 990,
         sellingPrice: 500,
         image: "IMG_20260206_112729_589.jpg"
+    },
+
+
+
+    
+    {
+        id: 001,
+        title: "Aldehydes , Ketones and Ether - Notes",
+        author: "Ayan Bhaiya",
+        subject: "Chemistry",
+        originalPrice: 199,
+        sellingPrice: 0,
+        image: ""
     }
 ];
 

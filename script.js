@@ -30,8 +30,8 @@ const BOOKS_DATA = [
     },
     {
         id: 3,
-        title: "Organic Chemistry",
-        author: "Morrison & Boyd",
+        title: "Elementary Problems in Organic Chemistry for JEE",
+        author: "M.S Chouhan",
         subject: "Chemistry",
         condition: "Good - Some highlighting",
         originalPrice: 950,
@@ -40,8 +40,8 @@ const BOOKS_DATA = [
     },
     {
         id: 4,
-        title: "Physical Chemistry",
-        author: "O.P. Tandon",
+        title: "Problems in Physical Chemistry for JEE",
+        author: "Narendra Avasthi",
         subject: "Chemistry",
         condition: "Very Good",
         originalPrice: 780,
@@ -50,9 +50,9 @@ const BOOKS_DATA = [
     },
     {
         id: 5,
-        title: "Objective Mathematics",
-        author: "R.D. Sharma",
-        subject: "Mathematics",
+        title: "Problems in Inorganic Chemistry for JEE",
+        author: "V.K Jaiswal",
+        subject: "Chemistry",
         condition: "Good - Minor wear",
         originalPrice: 920,
         sellingPrice: 450,
@@ -60,46 +60,6 @@ const BOOKS_DATA = [
     },
     {
         id: 6,
-        title: "Coordinate Geometry",
-        author: "S.L. Loney",
-        subject: "Mathematics",
-        condition: "Excellent",
-        originalPrice: 650,
-        sellingPrice: 300,
-        image: "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=400&h=500&fit=crop"
-    },
-    {
-        id: 7,
-        title: "Problems in General Physics",
-        author: "I.E. Irodov",
-        subject: "Physics",
-        condition: "Good - Some notes",
-        originalPrice: 750,
-        sellingPrice: 380,
-        image: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400&h=500&fit=crop"
-    },
-    {
-        id: 8,
-        title: "Inorganic Chemistry",
-        author: "J.D. Lee",
-        subject: "Chemistry",
-        condition: "Very Good - Clean",
-        originalPrice: 880,
-        sellingPrice: 450,
-        image: "https://images.unsplash.com/photo-1532153955177-f59af40d6472?w=400&h=500&fit=crop"
-    },
-    {
-        id: 9,
-        title: "Calculus and Analytic Geometry",
-        author: "Thomas & Finney",
-        subject: "Mathematics",
-        condition: "Good",
-        originalPrice: 990,
-        sellingPrice: 500,
-        image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
-    },
-    {
-        id: 10,
         title: "PW Class 11th JEE Physics Modules",
         author: "Physics Wallah",
         subject: "Physics",
@@ -109,7 +69,7 @@ const BOOKS_DATA = [
         image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
     },
     {
-        id: 11,
+        id: 7,
         title: "PW Class 11th JEE Chemistry Modules",
         author: "Physics Wallah",
         subject: "Chemistry",
@@ -119,7 +79,7 @@ const BOOKS_DATA = [
         image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
     },
     {
-        id: 12,
+        id: 8,
         title: "PW Class 11th JEE Mathematics Modules",
         author: "Physics Wallah",
         subject: "Mathematics",
@@ -129,7 +89,7 @@ const BOOKS_DATA = [
         image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
     },
     {
-        id: 13,
+        id: 9,
         title: "PW Class 12th JEE Physics Modules",
         author: "Physics Wallah",
         subject: "Physics",
@@ -149,7 +109,7 @@ const BOOKS_DATA = [
         image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
     },
     {
-        id: 15,
+        id: 10,
         title: "PW Class 12th JEE Mathematics Modules",
         author: "Physics Wallah",
         subject: "Mathematics",
@@ -159,7 +119,7 @@ const BOOKS_DATA = [
         image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
     },
     {
-        id: 16,
+        id: 11,
         title: "Chapterwise & Topicwise JEE Main & Advanced PHYSICS PYQs (2013 - 2024)",
         author: "Disha",
         subject: "Physics",
@@ -169,7 +129,7 @@ const BOOKS_DATA = [
         image: "IMG_20260206_112729_589.jpg"
     },
     {
-        id: 17,
+        id: 12,
         title: "Chapterwise & Topicwise JEE Main & Advanced CHEMISTRY PYQs (2013 - 2024)",
         author: "Disha",
         subject: "Chemistry",
@@ -179,7 +139,7 @@ const BOOKS_DATA = [
         image: "IMG_20260206_112729_589.jpg"
     },
     {
-        id: 18,
+        id: 13,
         title: "Chapterwise & Topicwise JEE Main & Advanced MATHEMATICS PYQs (2013 - 2024)",
         author: "Disha",
         subject: "Mathematics",
@@ -189,7 +149,7 @@ const BOOKS_DATA = [
         image: "IMG_20260206_112729_589.jpg"
     },
     {
-        id: 19,
+        id: 14,
         title: "CBSE PHYSICS Chapterwise Question Bank (2011 - 2024)",
         author: "Arihant",
         subject: "Physics",
@@ -199,7 +159,7 @@ const BOOKS_DATA = [
         image: "IMG_20260206_112729_589.jpg"
     },
     {
-        id: 20,
+        id: 15,
         title: "CBSE CHEMISTRY Chapterwise Question Bank (2011 - 2024)",
         author: "Arihant",
         subject: "Chemistry",
@@ -209,7 +169,7 @@ const BOOKS_DATA = [
         image: "IMG_20260206_112729_589.jpg"
     },
     {
-        id: 21,
+        id: 16,
         title: "CBSE MATHEMATICS Chapterwise Question Bank (2011 - 2024)",
         author: "Arihant",
         subject: "Mathematics",

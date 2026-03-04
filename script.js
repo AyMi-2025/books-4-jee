@@ -14,8 +14,8 @@ const BOOKS_DATA = [
         author: "H.C. Verma",
         subject: "Physics",
         condition: "Good - Minimal highlighting",
-        originalPrice: 850,
-        sellingPrice: 400,
+        originalPrice: 495,
+        sellingPrice: 230,
         image: "https://www.onetouchbook.com/cdn/shop/files/4ujgh-512.webp?v=1719127969"
     },
     {
@@ -24,8 +24,8 @@ const BOOKS_DATA = [
         author: "H.C. Verma",
         subject: "Physics",
         condition: "Excellent - Like new",
-        originalPrice: 850,
-        sellingPrice: 450,
+        originalPrice: 560,
+        sellingPrice: 300,
         image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=400&h=500&fit=crop"
     },
     {
@@ -34,8 +34,8 @@ const BOOKS_DATA = [
         author: "M.S Chouhan",
         subject: "Chemistry",
         condition: "Good - Some highlighting",
-        originalPrice: 950,
-        sellingPrice: 500,
+        originalPrice: 578,
+        sellingPrice: 300,
         image: "https://images.unsplash.com/photo-1589998059171-988d887df646?w=400&h=500&fit=crop"
     },
     {
@@ -44,7 +44,7 @@ const BOOKS_DATA = [
         author: "Narendra Avasthi",
         subject: "Chemistry",
         condition: "Very Good",
-        originalPrice: 780,
+        originalPrice: 658,
         sellingPrice: 350,
         image: "https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=400&h=500&fit=crop"
     },
@@ -54,8 +54,8 @@ const BOOKS_DATA = [
         author: "V.K Jaiswal",
         subject: "Chemistry",
         condition: "Good - Minor wear",
-        originalPrice: 920,
-        sellingPrice: 450,
+        originalPrice: 618,
+        sellingPrice: 300,
         image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=500&fit=crop"
     },
     {
@@ -64,8 +64,8 @@ const BOOKS_DATA = [
         author: "Physics Wallah",
         subject: "Physics",
         condition: "Good",
-        originalPrice: 990,
-        sellingPrice: 500,
+        originalPrice: 400,
+        sellingPrice: 200,
         image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
     },
     {
@@ -74,8 +74,8 @@ const BOOKS_DATA = [
         author: "Physics Wallah",
         subject: "Chemistry",
         condition: "Good",
-        originalPrice: 990,
-        sellingPrice: 500,
+        originalPrice: 400,
+        sellingPrice: 200,
         image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
     },
     {
@@ -84,8 +84,8 @@ const BOOKS_DATA = [
         author: "Physics Wallah",
         subject: "Mathematics",
         condition: "Good",
-        originalPrice: 990,
-        sellingPrice: 500,
+        originalPrice: 400,
+        sellingPrice: 200,
         image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
     },
     {
@@ -94,8 +94,8 @@ const BOOKS_DATA = [
         author: "Physics Wallah",
         subject: "Physics",
         condition: "Good",
-        originalPrice: 990,
-        sellingPrice: 500,
+        originalPrice: 500,
+        sellingPrice: 300,
         image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
     },
     {
@@ -104,8 +104,8 @@ const BOOKS_DATA = [
         author: "Physics Wallah",
         subject: "Chemsitry",
         condition: "Good",
-        originalPrice: 990,
-        sellingPrice: 500,
+        originalPrice: 500,
+        sellingPrice: 300,
         image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
     },
     {
@@ -114,8 +114,8 @@ const BOOKS_DATA = [
         author: "Physics Wallah",
         subject: "Mathematics",
         condition: "Good",
-        originalPrice: 990,
-        sellingPrice: 500,
+        originalPrice: 500,
+        sellingPrice: 300,
         image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop"
     },
     {
@@ -124,8 +124,8 @@ const BOOKS_DATA = [
         author: "Disha",
         subject: "Physics",
         condition: "Good",
-        originalPrice: 990,
-        sellingPrice: 500,
+        originalPrice: 950,
+        sellingPrice: 400,
         image: "IMG_20260206_112729_589.jpg"
     },
     {
@@ -134,8 +134,8 @@ const BOOKS_DATA = [
         author: "Disha",
         subject: "Chemistry",
         condition: "Good",
-        originalPrice: 990,
-        sellingPrice: 500,
+        originalPrice: 775,
+        sellingPrice: 350,
         image: "IMG_20260206_112729_589.jpg"
     },
     {
@@ -144,8 +144,8 @@ const BOOKS_DATA = [
         author: "Disha",
         subject: "Mathematics",
         condition: "Good",
-        originalPrice: 990,
-        sellingPrice: 500,
+        originalPrice: 900,
+        sellingPrice: 350,
         image: "IMG_20260206_112729_589.jpg"
     },
     {

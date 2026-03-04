@@ -177,6 +177,26 @@ const BOOKS_DATA = [
         originalPrice: 430,
         sellingPrice: 200,
         image: "IMG_20260206_112729_589.jpg"
+    },
+    {
+        id: 17,
+        title: "PW : The Catalyst - Chemistry for Class 12th BOARDS",
+        author: "Physics Wallah",
+        subject: "Chemistry",
+        condition: "New",
+        originalPrice: 430,
+        sellingPrice: 200,
+        image: "IMG_20260206_112729_589.jpg"
+    },
+    {
+        id: 18,
+        title: "PW : The Catalyst - Physics for Class 12th BOARDS",
+        author: "Physics Wallah",
+        subject: "Physics",
+        condition: "New",
+        originalPrice: 430,
+        sellingPrice: 200,
+        image: "IMG_20260206_112729_589.jpg"
     }
 ];
 

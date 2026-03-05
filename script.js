@@ -206,13 +206,9 @@ const BOOKS_DATA = [
 
 let currentFilter = 'All';
 let currentSearch = '';
-let cart = [];
 
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-    // Load cart from localStorage
-    loadCart();
-    
     // Initialize dark mode
     initDarkMode();
     
@@ -221,9 +217,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Setup all event listeners
     setupEventListeners();
-    
-    // Update cart UI
-    updateCartUI();
 });
 
 // Dark Mode Initialization
@@ -267,34 +260,6 @@ function setupEventListeners() {
             filterAndRenderBooks();
         });
     });
-    
-    // Cart toggle
-    const cartToggle = document.getElementById('cartToggle');
-    if (cartToggle) {
-        cartToggle.addEventListener('click', openCart);
-    }
-    
-    // Cart close
-    const cartClose = document.getElementById('cartClose');
-    if (cartClose) {
-        cartClose.addEventListener('click', closeCart);
-    }
-    
-    // Cart modal background click
-    const cartModal = document.getElementById('cartModal');
-    if (cartModal) {
-        cartModal.addEventListener('click', function(e) {
-            if (e.target === cartModal) {
-                closeCart();
-            }
-        });
-    }
-    
-    // Checkout button
-    const checkoutBtn = document.getElementById('checkoutBtn');
-    if (checkoutBtn) {
-        checkoutBtn.addEventListener('click', checkoutCart);
-    }
     
     // Lightbox events
     setupLightboxEvents();
@@ -352,21 +317,12 @@ function renderBooks(books) {
 
     booksGrid.innerHTML = books.map(book => createBookCard(book)).join('');
 
-    // Add event listeners to buttons
+    // Add event listeners to WhatsApp buttons
     books.forEach(book => {
-        // WhatsApp button
-        const whatsappBtn = document.getElementById('whatsapp-' + book.id);
-        if (whatsappBtn) {
-            whatsappBtn.addEventListener('click', function() {
+        const btn = document.getElementById('whatsapp-' + book.id);
+        if (btn) {
+            btn.addEventListener('click', function() {
                 openWhatsApp(book);
-            });
-        }
-        
-        // Add to Cart button
-        const cartBtn = document.getElementById('add-to-cart-' + book.id);
-        if (cartBtn) {
-            cartBtn.addEventListener('click', function() {
-                toggleCart(book);
             });
         }
     });
@@ -378,7 +334,6 @@ function createBookCard(book) {
     const safeTitle = book.title.replace(/'/g, "\\'");
     const safeAuthor = book.author.replace(/'/g, "\\'");
     const caption = safeTitle + ' by ' + safeAuthor;
-    const inCart = cart.some(item => item.id === book.id);
     
     return '<div class="book-card">' +
             '<div class="book-image-container">' +
@@ -400,27 +355,19 @@ function createBookCard(book) {
                     '<span class="original-price">₹' + book.originalPrice + '</span>' +
                     '<span class="discount-badge">' + discount + '% OFF</span>' +
                 '</div>' +
-                '<div class="book-actions">' +
-                    '<button id="add-to-cart-' + book.id + '" class="add-to-cart-btn' + (inCart ? ' in-cart' : '') + '">' +
-                        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
-                            (inCart ? '<path d="M20 6L9 17l-5-5"></path>' : '<circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>') +
-                        '</svg>' +
-                        (inCart ? 'In Cart' : 'Add to Cart') +
-                    '</button>' +
-                    '<button id="whatsapp-' + book.id + '" class="whatsapp-btn">' +
-                        '<svg class="whatsapp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
-                            '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>' +
-                        '</svg>' +
-                        'WhatsApp' +
-                    '</button>' +
-                '</div>' +
+                '<button id="whatsapp-' + book.id + '" class="whatsapp-btn">' +
+                    '<svg class="whatsapp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
+                        '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>' +
+                    '</svg>' +
+                    'Message on WhatsApp' +
+                '</button>' +
             '</div>' +
         '</div>';
 }
 
 // Open WhatsApp with pre-filled message
 function openWhatsApp(book) {
-    const message = "Hi! I'm interested in buying \"" + book.title + "\" by " + book.author + " for ₹" + book.sellingPrice;
+    const message = "Hi! I'm interested in buying \"" + book.title + "\" by " + book.author + " , its listed price on website is: ₹" + book.sellingPrice;
     const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
     window.open(url, '_blank');
 }
@@ -441,149 +388,4 @@ function closeLightbox() {
     const lightbox = document.getElementById('imageLightbox');
     lightbox.style.display = 'none';
     document.body.style.overflow = 'auto';
-}
-
-// ====================================
-// CART FUNCTIONS
-// ====================================
-
-// Load cart from localStorage
-function loadCart() {
-    const savedCart = localStorage.getItem('bookCart');
-    if (savedCart) {
-        cart = JSON.parse(savedCart);
-    }
-}
-
-// Save cart to localStorage
-function saveCart() {
-    localStorage.setItem('bookCart', JSON.stringify(cart));
-}
-
-// Add or remove book from cart
-function toggleCart(book) {
-    const index = cart.findIndex(item => item.id === book.id);
-    
-    if (index > -1) {
-        // Remove from cart
-        cart.splice(index, 1);
-    } else {
-        // Add to cart
-        cart.push(book);
-    }
-    
-    saveCart();
-    updateCartUI();
-    renderBooks(BOOKS_DATA.filter(b => {
-        const matchesSearch = b.title.toLowerCase().includes(currentSearch) ||
-                            b.author.toLowerCase().includes(currentSearch);
-        const matchesFilter = currentFilter === 'All' || b.subject === currentFilter;
-        return matchesSearch && matchesFilter;
-    }));
-}
-
-// Update cart count and UI
-function updateCartUI() {
-    const cartCount = document.getElementById('cartCount');
-    const cartItems = document.getElementById('cartItems');
-    const emptyCart = document.getElementById('emptyCart');
-    const cartFooter = document.getElementById('cartFooter');
-    const cartTotalPrice = document.getElementById('cartTotalPrice');
-    
-    // Update cart count
-    if (cartCount) {
-        cartCount.textContent = cart.length;
-        if (cart.length === 0) {
-            cartCount.classList.add('hidden');
-        } else {
-            cartCount.classList.remove('hidden');
-        }
-    }
-    
-    // Update cart items display
-    if (cart.length === 0) {
-        if (emptyCart) emptyCart.style.display = 'block';
-        if (cartItems) cartItems.style.display = 'none';
-        if (cartFooter) cartFooter.style.display = 'none';
-    } else {
-        if (emptyCart) emptyCart.style.display = 'none';
-        if (cartItems) cartItems.style.display = 'block';
-        if (cartFooter) cartFooter.style.display = 'block';
-        
-        // Render cart items
-        if (cartItems) {
-            cartItems.innerHTML = cart.map(book => createCartItem(book)).join('');
-            
-            // Add remove button listeners
-            cart.forEach(book => {
-                const removeBtn = document.getElementById('remove-' + book.id);
-                if (removeBtn) {
-                    removeBtn.addEventListener('click', function() {
-                        toggleCart(book);
-                    });
-                }
-            });
-        }
-        
-        // Update total price
-        const total = cart.reduce((sum, book) => sum + book.sellingPrice, 0);
-        if (cartTotalPrice) {
-            cartTotalPrice.textContent = '₹' + total;
-        }
-    }
-}
-
-// Create cart item HTML
-function createCartItem(book) {
-    return '<div class="cart-item">' +
-            '<img src="' + book.image + '" alt="' + book.title + '" class="cart-item-image">' +
-            '<div class="cart-item-details">' +
-                '<div class="cart-item-title">' + book.title + '</div>' +
-                '<div class="cart-item-author">by ' + book.author + '</div>' +
-                '<div class="cart-item-price">₹' + book.sellingPrice + '</div>' +
-            '</div>' +
-            '<button id="remove-' + book.id + '" class="cart-item-remove">×</button>' +
-        '</div>';
-}
-
-// Open cart modal
-function openCart() {
-    const cartModal = document.getElementById('cartModal');
-    if (cartModal) {
-        cartModal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-        updateCartUI();
-    }
-}
-
-// Close cart modal
-function closeCart() {
-    const cartModal = document.getElementById('cartModal');
-    if (cartModal) {
-        cartModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-}
-
-// Checkout via WhatsApp
-function checkoutCart() {
-    if (cart.length === 0) return;
-    
-    let message = "Hi! I'm interested in ordering the following books:\n\n";
-    
-    cart.forEach((book, index) => {
-        message += (index + 1) + ". " + book.title + " by " + book.author + " - ₹" + book.sellingPrice + "\n";
-    });
-    
-    const total = cart.reduce((sum, book) => sum + book.sellingPrice, 0);
-    message += "\nTotal: ₹" + total;
-    
-    const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
-    window.open(url, '_blank');
-    
-    // Optional: Clear cart after checkout
-    // cart = [];
-    // saveCart();
-    // updateCartUI();
-    // closeCart();
 }
